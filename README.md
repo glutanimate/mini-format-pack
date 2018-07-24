@@ -23,7 +23,7 @@ Extends the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/) wi
 
 **AnkiWeb**
 
-[Link to the add-on on AnkiWeb](https://ankiweb.net/shared/info/not_available_yet)
+[Link to the add-on on AnkiWeb](https://ankiweb.net/shared/info/295889520)
 
 **Manual installation**
 
