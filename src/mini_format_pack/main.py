@@ -28,14 +28,6 @@ def getConfig():
 
 # Format Functions
 
-def hiliteColor(editor):
-    editor.web.eval("setFormat('outdent')")
-
-
-def hiliteColorChoose(editor):
-    print("choose color")
-
-
 def insertOrderedList(editor):
     editor.web.eval("setFormat('insertOrderedList')")
 
@@ -147,7 +139,6 @@ def _wrapWithBgColour(editor, color):
 def createCustomButton(editor, name, tooltip, hotkey, method):
     if name == "onBackground":
         editor._links[name] = method
-        print(editor._links)
         return '''<button tabindex=-1 class=linkb title="{}"
                     type="button" onclick="pycmd('{}');return false;">
                     <div id=backcolor style="display:inline-block; background: #000;border-radius: 5px;"
