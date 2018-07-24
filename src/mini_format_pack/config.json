@@ -1,0 +1,71 @@
+{
+    "actions": [
+        {
+            "name": "strikeThrough",
+            "tooltip": "Apply strikethrough",
+            "hotkey": "alt+shift+5"
+        },
+        {
+            "name": "onBackground",
+            "tooltip": "Highlight text",
+            "hotkey": "ctrl+shift+b",
+            "custom": true
+        },
+        {
+            "name": "onChangeBgCol",
+            "tooltip": "Change highlight color",
+            "hotkey": "ctrl+shift+n",
+            "label": "▼"
+        },
+        {
+            "name": "formatBlockPre",
+            "tooltip": "Insert code block",
+            "hotkey": "ctrl+."
+        },
+        {
+            "name": "insertHorizontalRule",
+            "tooltip": "Insert horizontal line",
+            "hotkey": "ctrl+shift+alt+_"
+        },
+        {
+            "name": "insertUnorderedList",
+            "tooltip": "Toggle unordered list",
+            "hotkey": "ctrl+["
+        },
+        {
+            "name": "insertOrderedList",
+            "tooltip": "Toggle ordered list",
+            "hotkey": "ctrl+]"
+        },
+        {
+            "name": "indent",
+            "tooltip": "Indent",
+            "hotkey": "ctrl+shift+]"
+        },
+        {
+            "name": "outdent",
+            "tooltip": "Outdent",
+            "hotkey": "ctrl+shift+["
+        },
+        {
+            "name": "justifyCenter",
+            "tooltip": "Center text",
+            "hotkey": "ctrl+shift+alt+s"
+        },
+        {
+            "name": "justifyLeft",
+            "tooltip": "Align text to the left",
+            "hotkey": "ctrl+shift+alt+l"
+        },
+        {
+            "name": "justifyRight",
+            "tooltip": "Align text to the right",
+            "hotkey": "ctrl+shift+alt+r"
+        },
+        {
+            "name": "justifyFull",
+            "tooltip": "Justify text",
+            "hotkey": "ctrl+shift+alt+b"
+        }
+    ]
+}
