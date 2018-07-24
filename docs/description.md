@@ -35,7 +35,8 @@ Your changes will be applied once you restart your editor window (if running). P
 
 **CHANGELOG**
 
-2018-07-18: **v0.1.0** – Initial release
+2018-07-24: **v0.1.1** – Quick fix for highlight button hotkey not working
+2018-07-24: **v0.1.0** – Initial release
 
 **SUPPORT**
 
