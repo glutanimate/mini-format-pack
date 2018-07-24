@@ -1,4 +1,4 @@
-This is a quick stripped-down version of Stefan van den Akker's [Power Format Pack add-on](https://ankiweb.net/shared/info/162313389) that is designed to work with Anki 2.1. It's only meant as a holdover until someone finds the time to port PFP in its entirety, or until similar features arrive in Anki itself. Please don't expect any further major additions like markdown support, etc.
+This is a quick stripped-down version of Stefan van den Akker's [Power Format Pack add-on](https://ankiweb.net/shared/info/162313389). It is designed to work with Anki 2.1, but it is only meant as a holdover until someone finds the time to port PFP in its entirety (or until similar features arrive in Anki itself). Please don't expect any further major additions like markdown support, etc.
 
 
 **SCREENSHOT**
@@ -63,6 +63,6 @@ New to Anki? Feel free to check out my YouTube channel where I post weekly tutor
 
 Writing, supporting, and maintaining Anki add-ons like this takes a lot of time and effort. If *Mini Format Pack* or any of my other add-ons has been a valuable asset in your studies, please consider **buying me a coffee**:
 
-<a href="https://www.buymeacoffee.com/glutanimate" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://www.buymeacoffee.com/glutanimate" rel="nofollow"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
 
 Each and every contribution is greatly appreciated and will help me maintain and improve my add-ons as time goes by!
