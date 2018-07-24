@@ -30,32 +30,23 @@ cleanbuild:
 	find . \( -name '*.pyc' -o -name '*.pyo' -o -name '__pycache__' \) -delete
 
 ui:
-	PYENV_VERSION=anki20tools ./tools/build_ui.sh "$(ADDONDIR)" 4
 	PYENV_VERSION=anki21tools ./tools/build_ui.sh "$(ADDONDIR)" 5
 
 builddir:
-	mkdir -p build/dist build/dist21
+	mkdir -p build/dist
 
 buildzip:
 	rm -f *-current-anki2*.zip
-	cp src/*.py build/dist/
 	cp -r "src/$(ADDONDIR)" build/dist/
-	cp -r "src/$(ADDONDIR)/"* build/dist21/
-	rm -rf "build/dist/$(ADDONDIR)/forms5" build/dist21/forms4
-	cd build/dist && zip -r "../../$(ADDON)-current-anki20.zip" *
-	cd build/dist21 && zip -r "../../$(ADDON)-current-anki21.zip" *
+	rm -rf "build/dist/$(ADDONDIR)/forms5"
+	cd build/dist && zip -r "../../$(ADDON)-current-anki21.zip" *
 	rm -rf build
 
 buildrelease:
 	rm -f *-release-$(VERSION)-anki2*.zip
 	git archive --format tar $(VERSION) | tar -x -C build/dist/
-	cp -r build/dist/* build/dist21
-	rm -rf "build/dist/$(ADDONDIR)/forms5" "build/dist21/forms4"
+	rm -rf "build/dist/$(ADDONDIR)/forms5"
 	cd build/dist &&  \
-		PYENV_VERSION=anki20tools ../../tools/build_ui.sh "$(ADDONDIR)" 4 &&\
-		cd src && \
-		zip -r "../../../$(ADDON)-release-$(VERSION)-anki20.zip" "$(ADDONDIR)" *.py
-	cd build/dist21 &&  \
 		PYENV_VERSION=anki21tools ../../tools/build_ui.sh "$(ADDONDIR)" 5 &&\
 		cd src/"$(ADDONDIR)" && \
 		zip -r "../../../../$(ADDON)-release-$(VERSION)-anki21.zip" *
