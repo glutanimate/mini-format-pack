@@ -44,6 +44,10 @@ def indent(editor):
     editor.web.eval("setFormat('indent')")
 
 
+def insertTab(editor):
+    editor.web.eval("setFormat('inserthtml', '&emsp;')")
+
+
 def outdent(editor):
     editor.web.eval("setFormat('outdent')")
 
@@ -54,6 +58,26 @@ def formatBlockPre(editor):
 
 def formatBlockCode(editor):
     editor.web.eval("wrap('<code>', '</code>')")
+
+
+def formatBlockCodeClass(editor):
+    editor.web.eval("wrap('<font color=\"#0000ff\"><b>', '</b></font>')")
+
+
+def formatBlockCodeComment(editor):
+    editor.web.eval("wrap('<font color=\"#408080\">', '</font>')")
+
+
+def formatBlockCodeKeyword(editor):
+    editor.web.eval("wrap('<font color=\"#00aa7f\"><b>', '</b></font>')")
+
+
+def formatBlockCodeText(editor):
+    editor.web.eval("wrap('<font color=\"#ba2121\">', '</font>')")
+
+
+def formatBlockCodeType(editor):
+    editor.web.eval("wrap('<font color=\"#800040\">', '</font>')")
 
 
 def insertHorizontalRule(editor):

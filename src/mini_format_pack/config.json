@@ -1,6 +1,11 @@
 {
     "actions": [
         {
+            "name": "insertTab",
+            "tooltip": "Insert tab",
+            "hotkey": "ctrl+shift+t"
+        },
+        {
             "name": "strikeThrough",
             "tooltip": "Apply strikethrough",
             "hotkey": "alt+shift+5"
@@ -26,6 +31,31 @@
             "name": "formatBlockCode",
             "tooltip": "Format code",
             "hotkey": "ctrl+`"
+        },
+        {
+            "name": "formatBlockCodeClass",
+            "tooltip": "Format class",
+            "hotkey": "ctrl+l"
+        },
+        {
+            "name": "formatBlockCodeComment",
+            "tooltip": "Format comments",
+            "hotkey": "ctrl+m"
+        },
+        {
+            "name": "formatBlockCodeKeyword",
+            "tooltip": "Format keyword",
+            "hotkey": "ctrl+k"
+        },
+        {
+            "name": "formatBlockCodeText",
+            "tooltip": "Format text",
+            "hotkey": "ctrl+t"
+        },
+        {
+            "name": "formatBlockCodeType",
+            "tooltip": "Format type",
+            "hotkey": "ctrl+@"
         },
         {
             "name": "insertHorizontalRule",
