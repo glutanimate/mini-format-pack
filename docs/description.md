@@ -1,11 +1,10 @@
+<!-- BANNER -->
+
 This is a quick stripped-down version of Stefan van den Akker's [Power Format Pack add-on](https://ankiweb.net/shared/info/162313389). It is designed to work with Anki 2.1, but it is only meant as a holdover until someone finds the time to port PFP in its entirety (or until similar features arrive in Anki itself). Please don't expect any further major additions like markdown support, etc.
 
+![](https://raw.githubusercontent.com/glutanimate/mini-format-pack/master/screenshots/screenshot.png)
 
-**SCREENSHOT**
-
-![](https://raw.githubusercontent.com/glutanimate/mini-format-pack/master/screenshots/main.png)
-
-**CURRENT FEATURE-SET**
+### FEATURES
 
 - Highlight text
 - Insert code block
@@ -16,12 +15,9 @@ This is a quick stripped-down version of Stefan van den Akker's [Power Format Pa
 - Outdent selection
 - Alignment buttons
 
-**COMPATIBILITY**
+<!-- CHANGELOG -->
 
-As Anki 2.1 is still being tested it is possible that a future development release will break 2.1 compatibility. **Please do not report issues in the review section below**. Instead, please report all issues you encounter on [GitHub](https://github.com/glutanimate/mini-format-pack/issues).
-
-
-**CONFIGURATION**
+### CONFIGURATION
 
 The add-on offers some limited configuration capabilities, but they are not as fleshed out nor as user-friendly as PFP. You will have to use Anki 2.1's built-in config manager to update the config dictionary (Tools → Add-ons → Select Mini Format Pack → Click configure). 
 
@@ -33,37 +29,26 @@ The properties  you can modify include:
 
 Your changes will be applied once you restart your editor window (if running). Please do not change the '`name`' property, as this is used to assign the corresponding button to the function it calls.
 
-**CHANGELOG**
+### RELATED ADD-ONS
 
-2018-07-24: **v0.1.1** – Quick fix for highlight button hotkey not working
-2018-07-24: **v0.1.0** – Initial release
+If you're looking for even more powerful formatting features in Anki 2.1, make sure to also check out some of the following add-ons:
 
-**SUPPORT**
+- [Add Table](https://ankiweb.net/shared/info/1237621971) for table support. Also check out [this guide](https://reddit.com/r/Anki/comments/afixrv/how_i_create_table_in_anki_21/) for more complex table layouts.
+- [Add Hyperlink](https://ankiweb.net/shared/info/318752047) for hyperlink support
+- [Syntax Highlighting](https://ankiweb.net/shared/info/1463041493) for pretty-formatted code snippets
 
-I can only reply to your reviews in a limited fashion, so this is not a good way to report or troubleshoot issues. Instead, please report all issues you encounter either by creating a bug report on [GitHub](https://github.com/glutanimate/mini-format-pack/issues), or by posting a new thread on the [Anki add-on support forums](https://anki.tenderapp.com/discussions/add-ons). Please make sure to include the name of the affected add-on in your report title when you do so.
+<!-- SUPPORT -->
 
-**CREDITS AND LICENSE**
+### CREDITS AND LICENSE
 
 *Copyright(c) 2014-2018 [Stefan van den Akker](https://relentlesscoding.com/)*
 *Copyright(c) 2017-2018 [Damien Elmes](http://ichi2.net/contact.html)*
-*Copyright (c) 2018 [Glutanimate](https://glutanimate.com/)*
+*Copyright © 2018-2019 [Aristotelis P.](https://glutanimate.com/)  (Glutanimate)*
 
 *Mini Format pack* is based on [*Power Format Pack*](https://github.com/Neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://github.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
 
-Licensed under the [GNU AGPLv3](https://www.gnu.org/licenses/agpl.html). The code for this add-on is available on [![GitHub icon](https://glutanimate.com/logos/github.svg) GitHub](https://github.com/glutanimate/mini-format-pack).
+Licensed under the _GNU AGPLv3_, extended by a number of additional terms. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. For more information on the license please see the [LICENSE file](https://github.com/glutanimate/mini-format-pack/blob/master/LICENSE) accompanying this add-on. The source code is available on [![GitHub icon](https://glutanimate.com/logos/github.svg) GitHub](https://github.com/glutanimate/mini-format-pack). Pull requests and other contributions are welcome!
 
-**MORE RESOURCES**
+<!-- RESOURCES -->
 
-A lot of my add-ons were commissioned by other Anki users. Please feel free to reach out to me if you would like to hire my services for any Anki-related development work (writing an add-on for you, converting existing ones to Anki 2.1, implementing a specific feature): ![Email icon](https://glutanimate.com/logos/email.svg) <em>ankiglutanimate [αt] gmail .com</em>. 
-
-Want to stay up-to-date with my latest add-on releases and updates? Make sure to follow me on Twitter: [![Twitter bird](https://glutanimate.com/logos/twitter.svg)@Glutanimate](https://twitter.com/glutanimate)
-
-New to Anki? Feel free to check out my YouTube channel where I post weekly tutorials on Anki add-ons and related topics: [![YouTube playbutton](https://glutanimate.com/logos/youtube.svg) / Glutanimate](https://www.youtube.com/c/glutanimate)
-
-**SUPPORT MY WORK**
-
-Writing, supporting, and maintaining Anki add-ons like this takes a lot of time and effort. If *Mini Format Pack* or any of my other add-ons has been a valuable asset in your studies, please consider **buying me a coffee**:
-
-<a href="https://www.buymeacoffee.com/glutanimate" rel="nofollow"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
-
-Each and every contribution is greatly appreciated and will help me maintain and improve my add-ons as time goes by!
+<!-- FUNDING -->

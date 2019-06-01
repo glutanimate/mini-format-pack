@@ -1,0 +1,15 @@
+{
+    "display_name": "Mini Format Pack",
+    "module_name": "mini_format_pack",
+    "repo_name": "mini-format-pack",
+    "ankiweb_id": "295889520",
+    "author": "Glutanimate",
+    "contact": "https://glutanimate.com",
+    "homepage": "https://github.com/glutanimate/mini-format-pack",
+    "copyright_start": 2018,
+    "tags": "editor text formatting",
+    "conflicts": [],
+    "targets": [
+        "anki21"
+    ]
+}

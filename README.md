@@ -1,60 +1,88 @@
-## Mini Format Pack Add-on for Anki
+<p align="center"><img src="screenshots/main.png" width="456" height="370"></p>
+
+<h2 align="center">Mini Format Pack for Anki</h2>
+
+<p align="center">
+<a title="Latest (pre-)release" href="https://github.com/glutanimate/mini-format-pack/releases"><img src ="https://img.shields.io/github/release-pre/glutanimate/mini-format-pack.svg?colorB=brightgreen"></a>
+<a title="License: GNU AGPLv3" href="https://github.com/glutanimate/mini-format-pack/blob/master/LICENSE"><img  src="https://img.shields.io/badge/license-GNU AGPLv3-green.svg"></a>
+<a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/295889520"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
+<br>
+<a title="Buy me a coffee :)" href="https://ko-fi.com/X8X0L4YV"><img src="https://img.shields.io/badge/ko--fi-contribute-%23579ebd.svg"></a>
+<a title="Support me on Patreon :D" href="https://www.patreon.com/bePatron?u=7522179"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
+<a title="Follow me on Twitter" href="https://twitter.com/intent/user?screen_name=glutanimate"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
+</p>
+
+> Fancy flashcards!
 
 Extends the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/) with a number of additional text formatting options.
 
-### Table of Contents
+### Table of Contents <!-- omit in toc -->
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC levels="1,2,3" -->
 
-- [Mini Format Pack Add-on for Anki](#mini-format-pack-add-on-for-anki)
-    - [Table of Contents](#table-of-contents)
-    - [Screenshots](#screenshots)
-    - [Installation](#installation)
-    - [Documentation](#documentation)
-    - [License and Credits](#license-and-credits)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Building](#building)
+- [Contributing](#contributing)
+- [License and Credits](#license-and-credits)
 
 <!-- /MarkdownTOC -->
 
-### Screenshots
-
-![](screenshots/main.png)
-
 ### Installation
 
-**AnkiWeb**
+#### AnkiWeb <!-- omit in toc -->
 
-[Link to the add-on on AnkiWeb](https://ankiweb.net/shared/info/295889520)
+The easiest way to install Mini Format Pack is through [AnkiWeb](https://ankiweb.net/shared/info/295889520).
 
-**Manual installation**
+#### Manual installation <!-- omit in toc -->
 
-*Anki 2.1*
-
-1. Go to *Tools* → *Add-ons* → *Open add-ons folder*
-2. See if the `mini_format_pack` folder already exists
-3. If you would like to keep your settings thus far: Find the `meta.json` file contained within and copy it to a safe location.
-4. Proceed to delete the `mini_format_pack` folder
-5. Download and extract the latest Anki 2.1 add-on release from the [releases tab](https://github.com/Glutanimate/mini-format-pack/releases)
-6. Rename the extracted folder to `mini_format_pack` and move it into the add-ons directory
-7. Optional: Place the `meta.json` file back in the directory if you created a copy beforehand.
-8. Restart Anki
+1. Make sure you have the [latest version](https://apps.ankiweb.net/#download) of Anki 2.1 installed. Earlier releases (e.g. found in various Linux distros) do not support `.ankiaddon` packages.
+2. Download the latest `.ankiaddon` package from the [releases tab](https://github.com/glutanimate/mini-format-pack/releases) (you might need to click on *Assets* below the description to reveal the download links)
+3. From Anki's main window, head to *Tools* → *Add-ons*
+4. Drag-and-drop the `.ankiaddon` package onto the add-ons list
+5. Restart Anki
 
 ### Documentation
 
 For further information on the use of this add-on please check out [the original add-on description](docs/description.md).
 
+### Building
+
+With [Anki add-on builder](https://github.com/glutanimate/anki-addon-builder/) installed:
+
+    git clone https://github.com/glutanimate/mini-format-pack.git
+    cd mini-format-pack
+    aab build
+
+For more information on the build process please refer to [`aab`'s documentation](https://github.com/glutanimate/anki-addon-builder/#usage).
+
+### Contributing
+
+Contributions are welcome! Please review the [contribution guidelines](./CONTRIBUTING.md) on how to:
+
+- Report issues
+- File pull requests
+- Support the project as a non-developer
+
 ### License and Credits
 
-*Mini Format Pack* is:
+*Mini Format Pack* is
 
 *Copyright(c) 2014-2018 [Stefan van den Akker](https://relentlesscoding.com/)*
 
 *Copyright(c) 2017-2018 [Damien Elmes](http://ichi2.net/contact.html)*
 
-*Copyright (c) 2018 [Glutanimate](https://glutanimate.com/)*
+*Copyright © 2018-2019 [Aristotelis P.](https://glutanimate.com/) (Glutanimate)*
 
 *Mini Format pack* is based on [*Power Format Pack*](https://github.com/Neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://github.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
 
-Licensed under the [GNU AGPLv3](https://www.gnu.org/licenses/agpl.html). The code for this add-on is available on [![GitHub icon](https://glutanimate.com/logos/github.svg) GitHub](https://github.com/glutanimate/mini-format-pack).
+Mini Format Pack is free and open-source software. The add-on code that runs within Anki is released under the GNU AGPLv3 license, extended by a number of additional terms. For more information please see the [LICENSE](https://github.com/glutanimate/mini-format-pack/blob/master/LICENSE) file that accompanied this program.
 
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
-Licensed under the [GNU AGPLv3](https://www.gnu.org/licenses/agpl.html).
+----
+
+<b>
+<div align="center">The continued development of this add-on is made possible <br>thanks to my <a href="https://www.patreon.com/glutanimate">Patreon</a> and <a href="https://ko-fi.com/X8X0L4YV">Ko-Fi</a> supporters.
+<br>You guys rock ❤️ !</div>
+</b>
