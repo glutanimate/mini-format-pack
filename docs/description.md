@@ -2,7 +2,7 @@
 
 This is a quick stripped-down version of Stefan van den Akker's [Power Format Pack add-on](https://ankiweb.net/shared/info/162313389). It is designed to work with Anki 2.1, but it is only meant as a holdover until someone finds the time to port PFP in its entirety (or until similar features arrive in Anki itself). Please don't expect any further major additions like markdown support, etc.
 
-![](https://raw.githubusercontent.com/glutanimate/mini-format-pack/master/screenshots/screenshot.png)
+![](https://raw.githubusercontent.com/glutanimate/mini-format-pack/master/screenshots/main.png)
 
 ### FEATURES
 
