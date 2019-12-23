@@ -23,6 +23,12 @@
             "hotkey": "ctrl+."
         },
         {
+            "name": "formatInlineCode",
+            "tooltip": "Insert inline code",
+            "hotkey": "ctrl+shift+.",
+            "label": "#"
+        },
+        {
             "name": "insertHorizontalRule",
             "tooltip": "Insert horizontal line",
             "hotkey": "ctrl+shift+alt+_"

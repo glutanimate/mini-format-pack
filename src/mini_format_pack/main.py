@@ -52,6 +52,10 @@ def formatBlockPre(editor):
     editor.web.eval("setFormat('formatBlock', 'pre')")
 
 
+def formatInlineCode(editor):
+    editor.web.eval("wrap('<code>', '</code>')")
+
+
 def insertHorizontalRule(editor):
     editor.web.eval("setFormat('insertHorizontalRule')")
 
