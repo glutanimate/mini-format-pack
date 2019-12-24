@@ -14,6 +14,7 @@ License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
 from aqt import mw
 from aqt.qt import *
+from aqt.utils import getOnlyText
 from anki.hooks import addHook
 from anki.utils import isWin, isMac
 
@@ -38,6 +39,14 @@ def insertUnorderedList(editor):
 
 def strikeThrough(editor):
     editor.web.eval("setFormat('strikeThrough')")
+
+
+def abbr(editor):
+    title = getOnlyText(_("Full text for the abbreviation:"), default="")
+    editor.web.eval("""
+        var sel = document.getSelection().toString();
+        document.execCommand("insertHTML", false, "<abbr title='{}'>" + sel + "</abbr>");
+    """.format(title))
 
 
 def indent(editor):

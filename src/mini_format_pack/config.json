@@ -6,6 +6,12 @@
             "hotkey": "alt+shift+5"
         },
         {
+            "name": "abbr",
+            "tooltip": "Apply &lt;abbr&gt; tag",
+            "hotkey": "ctrl+shift+alt+a",
+            "label": "&lt;abbr&gt;"
+        },
+        {
             "name": "onBackground",
             "tooltip": "Highlight text",
             "hotkey": "ctrl+shift+b",
