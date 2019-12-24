@@ -12,10 +12,13 @@ License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 """
 
 
+import html
+
 from aqt import mw
 from aqt.qt import *
 from aqt.utils import getOnlyText
 from anki.hooks import addHook
+from anki.lang import _
 from anki.utils import isWin, isMac
 
 from .consts import addon_path
@@ -45,8 +48,9 @@ def abbr(editor):
     title = getOnlyText(_("Full text for the abbreviation:"), default="")
     editor.web.eval("""
         var sel = document.getSelection().toString();
-        document.execCommand("insertHTML", false, "<abbr title='{}'>" + sel + "</abbr>");
-    """.format(title))
+        document.execCommand("insertHTML", false,
+                             "<abbr title='{}'>" + sel + "</abbr>");
+    """.format(html.escape(title)))
 
 
 def indent(editor):
