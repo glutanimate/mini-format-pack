@@ -1,6 +1,11 @@
 {
     "actions": [
         {
+            "name": "setFontSize",
+            "tooltip": "Change font size",
+            "hotkey": "ctrl+shift+s"
+        },
+        {
             "name": "strikeThrough",
             "tooltip": "Apply strikethrough",
             "hotkey": "alt+shift+5"
