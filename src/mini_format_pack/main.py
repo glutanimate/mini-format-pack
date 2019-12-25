@@ -46,11 +46,8 @@ def strikeThrough(editor):
 
 def abbr(editor):
     title = getOnlyText(_("Full text for the abbreviation:"), default="")
-    editor.web.eval("""
-        var sel = document.getSelection().toString();
-        document.execCommand("insertHTML", false,
-                             "<abbr title='{}'>" + sel + "</abbr>");
-    """.format(html.escape(title)))
+    title = html.escape(title)
+    editor.web.eval("""wrap("<abbr title='{}'>", "</abbr>")""".format(title))
 
 
 def indent(editor):
