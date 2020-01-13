@@ -57,27 +57,55 @@ def formatBlockPre(editor):
 
 
 def formatBlockCode(editor):
-    editor.web.eval("wrap('<code>', '</code>')")
+    editor.web.eval("wrap('<code><font color=\"#000\">', '</font></code>')")
+
+
+def formatBlockAttribute(editor):
+    editor.web.eval("wrap('<font color=\"#289\">', '</font>')")
+
+
+def formatBlockCodeAttribute(editor):
+    editor.web.eval("wrap('<code><font color=\"#289\">', '</font></code>')")
+
+
+def formatBlockClass(editor):
+    editor.web.eval("wrap('<font color=\"#234e99\"><b>', '</b></font>')")
 
 
 def formatBlockCodeClass(editor):
-    editor.web.eval("wrap('<font color=\"#0000ff\"><b>', '</b></font>')")
+    editor.web.eval("wrap('<code><font color=\"#234e99\"><b>', '</b></font></code>')")
 
 
 def formatBlockCodeComment(editor):
-    editor.web.eval("wrap('<font color=\"#408080\">', '</font>')")
+    editor.web.eval("wrap('<font color=\"#95a5a6\"><i>', '</i></font>')")
+
+
+def formatBlockKeyword(editor):
+    editor.web.eval("wrap('<font color=\"#234e99\"><b>', '</b></font>')")
 
 
 def formatBlockCodeKeyword(editor):
-    editor.web.eval("wrap('<font color=\"#00aa7f\"><b>', '</b></font>')")
+    editor.web.eval("wrap('<code><font color=\"#234e99\"><b>', '</b></font></code>')")
+
+
+def formatBlockCodeKeywordLite(editor):
+    editor.web.eval("wrap('<code><font color=\"#234e99\">', '</font></code>')")
 
 
 def formatBlockCodeText(editor):
-    editor.web.eval("wrap('<font color=\"#ba2121\">', '</font>')")
+    editor.web.eval("wrap('<code><font color=\"#000\">', '</font></code>')")
+
+
+def formatBlockText(editor):
+    editor.web.eval("wrap('<font color=\"#000\">', '</font>')")
+
+
+def formatBlockType(editor):
+    editor.web.eval("wrap('<font color=\"#000\">', '</font>')")
 
 
 def formatBlockCodeType(editor):
-    editor.web.eval("wrap('<font color=\"#800040\">', '</font>')")
+    editor.web.eval("wrap('<code><font color=\"#000\">', '</font></code>')")
 
 
 def insertHorizontalRule(editor):

@@ -3,7 +3,7 @@
         {
             "name": "insertTab",
             "tooltip": "Insert tab",
-            "hotkey": "ctrl+shift+t"
+            "hotkey": "alt+shift+t"
         },
         {
             "name": "strikeThrough",
@@ -29,33 +29,68 @@
         },
         {
             "name": "formatBlockCode",
-            "tooltip": "Format code",
+            "tooltip": "Format to code",
             "hotkey": "ctrl+`"
         },
         {
+            "name": "formatBlockCodeKeyword",
+            "tooltip": "Format keyword with <code>",
+            "hotkey": "ctrl+q"
+        },
+        {
+            "name": "formatBlockKeyword",
+            "tooltip": "Format keyword",
+            "hotkey": "ctrl+shift+q"
+        },
+        {
+            "name": "formatBlockCodeKeywordLite",
+            "tooltip": "Format keyword lite with <code>",
+            "hotkey": "ctrl+w"
+        },
+        {
             "name": "formatBlockCodeClass",
-            "tooltip": "Format class",
+            "tooltip": "Format class with <code>",
             "hotkey": "ctrl+l"
+        },
+        {
+            "name": "formatBlockClass",
+            "tooltip": "Format class",
+            "hotkey": "ctrl+shift+l"
+        },
+        {
+            "name": "formatBlockCodeType",
+            "tooltip": "Format type with <code>",
+            "hotkey": "ctrl+@"
+        },
+        {
+            "name": "formatBlockType",
+            "tooltip": "Format type",
+            "hotkey": "ctrl+shift+@"
+        },
+        {
+            "name": "formatBlockCodeAttribute",
+            "tooltip": "Format class with <code>",
+            "hotkey": "ctrl+l"
+        },
+        {
+            "name": "formatBlockAttribute",
+            "tooltip": "Format class",
+            "hotkey": "ctrl+shift+l"
+        },
+        {
+            "name": "formatBlockCodeText",
+            "tooltip": "Format text with <code>",
+            "hotkey": "ctrl+t"
+        },
+        {
+            "name": "formatBlockText",
+            "tooltip": "Format text",
+            "hotkey": "ctrl+shift+t"
         },
         {
             "name": "formatBlockCodeComment",
             "tooltip": "Format comments",
             "hotkey": "ctrl+m"
-        },
-        {
-            "name": "formatBlockCodeKeyword",
-            "tooltip": "Format keyword",
-            "hotkey": "ctrl+k"
-        },
-        {
-            "name": "formatBlockCodeText",
-            "tooltip": "Format text",
-            "hotkey": "ctrl+t"
-        },
-        {
-            "name": "formatBlockCodeType",
-            "tooltip": "Format type",
-            "hotkey": "ctrl+@"
         },
         {
             "name": "insertHorizontalRule",
