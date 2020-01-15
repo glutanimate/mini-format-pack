@@ -89,7 +89,7 @@ def formatBlockCodeKeyword(editor):
 
 
 def formatBlockCodeKeywordLite(editor):
-    editor.web.eval("wrap('<code><font color=\"#234e99\">', '</font></code>')")
+    editor.web.eval("wrap('<code><font color=\"#289\">', '</font></code>')")
 
 
 def formatBlockCodeText(editor):
