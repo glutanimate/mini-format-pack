@@ -23,6 +23,11 @@
             "hotkey": "ctrl+."
         },
         {
+            "name": "formatBlockCode",
+            "tooltip": "Format code",
+            "hotkey": "ctrl+`"
+        },
+        {
             "name": "insertHorizontalRule",
             "tooltip": "Insert horizontal line",
             "hotkey": "ctrl+shift+alt+_"
