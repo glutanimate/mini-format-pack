@@ -25,7 +25,7 @@
         {
             "name": "insertHorizontalRule",
             "tooltip": "Insert horizontal line",
-            "hotkey": "ctrl+shift+alt+_"
+            "hotkey": "ctrl+shift+alt+-"
         },
         {
             "name": "insertUnorderedList",
