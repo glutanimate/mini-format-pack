@@ -14,6 +14,7 @@ License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
 from aqt import mw
 from aqt.qt import *
+from aqt.utils import getOnlyText
 from anki.hooks import addHook
 from anki.utils import isWin, isMac
 
@@ -38,6 +39,11 @@ def insertUnorderedList(editor):
 
 def strikeThrough(editor):
     editor.web.eval("setFormat('strikeThrough')")
+
+
+def setFontSize(editor):
+    fs = getOnlyText(_("New font size:"), default="5")
+    editor.web.eval("setFormat('fontSize', '{}px');".format(fs))
 
 
 def indent(editor):
