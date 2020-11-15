@@ -12,7 +12,7 @@ If you enjoy Mini Format Pack, please consider supporting my work on Patreon, or
 
 ## [Unreleased]
 
-- Added button for inline `code` formatting (thanks to Rai and lukkea for their contributions and to Juddd for the feature request)
+- Added button for inline `code` formatting (thanks to Rai and lukkea for their contributions and to Juddd for the feature request!)
     
 ## [0.1.1] - 2018-07-24
 
