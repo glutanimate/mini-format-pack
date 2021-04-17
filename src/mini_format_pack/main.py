@@ -13,13 +13,15 @@ License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 
 
 import html
+import os
 
-from aqt import mw
-from aqt.qt import *
-from aqt.utils import getOnlyText
 from anki.hooks import addHook
 from anki.lang import _
-from anki.utils import isWin, isMac
+from anki.utils import isMac, isWin
+from aqt import mw
+from aqt.utils import getOnlyText
+from PyQt5.QtGui import QColor, QKeySequence
+from PyQt5.QtWidgets import QColorDialog, QShortcut
 
 from .consts import addon_path
 
@@ -31,6 +33,7 @@ def getConfig():
 
 
 # Format Functions
+
 
 def insertOrderedList(editor):
     editor.web.eval("setFormat('insertOrderedList')")
@@ -91,15 +94,18 @@ def justifyFull(editor):
 # Background colour
 ######################################################################
 
+
 def setupBackgroundButton(editor):
     editor.bcolour = editor.mw.pm.profile.get("lastBgColor", "#00f")
     onBgColourChanged(editor)
+
 
 # use last colour
 
 
 def onBackground(editor):
     _wrapWithBgColour(editor, editor.bcolour)
+
 
 # choose new colour
 
@@ -116,12 +122,13 @@ def onChangeBgCol(editor):
 
 def _updateBackgroundButton(editor):
     editor.web.eval(
-        """$("#backcolor")[0].style.backgroundColor = '%s'""" % editor.bcolour)
+        """$("#backcolor")[0].style.backgroundColor = '%s'""" % editor.bcolour
+    )
 
 
 def onBgColourChanged(editor):
     _updateBackgroundButton(editor)
-    editor.mw.pm.profile['lastBgColor'] = editor.bcolour
+    editor.mw.pm.profile["lastBgColor"] = editor.bcolour
 
 
 def _wrapWithBgColour(editor, color):
@@ -131,38 +138,48 @@ def _wrapWithBgColour(editor, color):
     # On Linux, the standard 'hiliteColor' method works. On Windows and OSX
     # the formatting seems to get filtered out
 
-    editor.web.eval("""
+    editor.web.eval(
+        """
         if (!setFormat('hiliteColor', '%s')) {
             setFormat('backcolor', '%s');
         }
-        """ % (color, color))
+        """
+        % (color, color)
+    )
 
     if isWin or isMac:
         # remove all Apple style classes, which is needed for
         # text highlighting on platforms other than Linux
-        editor.web.eval("""
+        editor.web.eval(
+            """
             var matches = document.querySelectorAll(".Apple-style-span");
             for (var i = 0; i < matches.length; i++) {
                 matches[i].removeAttribute("class");
             }
-        """)
+        """
+        )
 
 
 # UI element creation
 
+
 def createCustomButton(editor, name, tooltip, hotkey, method):
     if name == "onBackground":
         editor._links[name] = method
-        QShortcut(QKeySequence(hotkey), editor.widget,
-                  activated=lambda s=editor: method(s))
-        return '''<button tabindex=-1 class=linkb title="{}"
+        QShortcut(
+            QKeySequence(hotkey), editor.widget, activated=lambda s=editor: method(s)
+        )
+        return """<button tabindex=-1 class=linkb title="{}"
                     type="button" onclick="pycmd('{}');return false;">
                     <div id=backcolor style="display:inline-block; background: #000;border-radius: 5px;"
-                    class=topbut></div></button>'''.format("{} ({})".format(tooltip, hotkey), name)
+                    class=topbut></div></button>""".format(
+            "{} ({})".format(tooltip, hotkey), name
+        )
     return ""
 
 
 # Hooks
+
 
 def onLoadNote(editor):
     setupBackgroundButton(editor)
@@ -194,10 +211,14 @@ def onSetupButtons(buttons, editor):
         if action.get("custom", False):
             b = createCustomButton(editor, name, tooltip, hotkey, method)
         else:
-            b = editor.addButton(icon_path, name, method,
-                                 tip="{} ({})".format(tooltip, hotkey),
-                                 label="" if icon_path else label,
-                                 keys=hotkey)
+            b = editor.addButton(
+                icon_path,
+                name,
+                method,
+                tip="{} ({})".format(tooltip, hotkey),
+                label="" if icon_path else label,
+                keys=hotkey,
+            )
 
         buttons.append(b)
 
