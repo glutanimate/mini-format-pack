@@ -12,9 +12,13 @@ License: GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
 """
 
 
+import html
+
 from aqt import mw
 from aqt.qt import *
+from aqt.utils import getOnlyText
 from anki.hooks import addHook
+from anki.lang import _
 from anki.utils import isWin, isMac
 
 from .consts import addon_path
@@ -38,6 +42,12 @@ def insertUnorderedList(editor):
 
 def strikeThrough(editor):
     editor.web.eval("setFormat('strikeThrough')")
+
+
+def abbr(editor):
+    title = getOnlyText(_("Full text for the abbreviation:"), default="")
+    title = html.escape(title)
+    editor.web.eval("""wrap("<abbr title='{}'>", "</abbr>")""".format(title))
 
 
 def indent(editor):
