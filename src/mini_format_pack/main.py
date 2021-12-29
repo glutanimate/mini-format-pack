@@ -19,7 +19,7 @@ from aqt.qt import *
 from aqt.utils import getOnlyText
 from anki.hooks import addHook
 from anki.lang import _
-from anki.utils import isWin, isMac
+from anki.utils import is_win, is_mac
 
 from .consts import addon_path
 
@@ -137,7 +137,7 @@ def _wrapWithBgColour(editor, color):
         }
         """ % (color, color))
 
-    if isWin or isMac:
+    if is_win or is_mac:
         # remove all Apple style classes, which is needed for
         # text highlighting on platforms other than Linux
         editor.web.eval("""
