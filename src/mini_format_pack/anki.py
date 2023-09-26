@@ -30,7 +30,3 @@
 #
 # Any modifications to this file must keep this entire header intact.
 
-
-import os
-
-addon_path = os.path.dirname(__file__)
