@@ -32,158 +32,36 @@
 # Any modifications to this file must keep this entire header intact.
 
 
-import html
 import os
+from typing import TYPE_CHECKING, List
 
-from anki.hooks import addHook
-from anki.lang import _
-from anki.utils import isMac, isWin
 from aqt import mw
-from aqt.utils import getOnlyText
-from PyQt5.QtGui import QColor, QKeySequence
-from PyQt5.QtWidgets import QColorDialog, QShortcut
+from aqt.gui_hooks import editor_did_init_buttons, editor_did_load_note
+from aqt.qt import QKeySequence, QShortcut
 
+from .anki import config_getter_factory
+from .background import update_background_color_ui
 from .consts import addon_path
+from .formatters import FORMATTERS
+
+if TYPE_CHECKING:
+    assert mw is not None
+    from aqt.editor import Editor
 
 # Config
 
 
-def getConfig():
-    return mw.addonManager.getConfig(__name__)
-
-
-# Format Functions
-
-
-def insertOrderedList(editor):
-    editor.web.eval("setFormat('insertOrderedList')")
-
-
-def insertUnorderedList(editor):
-    editor.web.eval("setFormat('insertUnorderedList')")
-
-
-def strikeThrough(editor):
-    editor.web.eval("setFormat('strikeThrough')")
-
-
-def abbr(editor):
-    title = getOnlyText(_("Full text for the abbreviation:"), default="")
-    title = html.escape(title)
-    editor.web.eval("""wrap("<abbr title='{}'>", "</abbr>")""".format(title))
-
-
-def indent(editor):
-    editor.web.eval("setFormat('indent')")
-
-
-def outdent(editor):
-    editor.web.eval("setFormat('outdent')")
-
-
-def formatBlockPre(editor):
-    editor.web.eval("setFormat('formatBlock', 'pre')")
-
-
-def formatInlineCode(editor):
-    editor.web.eval("wrap('<code>', '</code>')")
-
-
-def insertHorizontalRule(editor):
-    editor.web.eval("setFormat('insertHorizontalRule')")
-
-
-def justifyCenter(editor):
-    editor.web.eval("setFormat('justifyCenter');")
-
-
-def justifyLeft(editor):
-    editor.web.eval("setFormat('justifyLeft');")
-
-
-def justifyRight(editor):
-    editor.web.eval("setFormat('justifyRight');")
-
-
-def justifyFull(editor):
-    editor.web.eval("setFormat('justifyFull');")
-
-
-# Special format functions
-
-# Background colour
-######################################################################
-
-
-def setupBackgroundButton(editor):
-    editor.bcolour = editor.mw.pm.profile.get("lastBgColor", "#00f")
-    onBgColourChanged(editor)
-
-
-# use last colour
-
-
-def onBackground(editor):
-    _wrapWithBgColour(editor, editor.bcolour)
-
-
-# choose new colour
-
-
-def onChangeBgCol(editor):
-    new = QColorDialog.getColor(QColor(editor.bcolour), None)
-    # native dialog doesn't refocus us for some reason
-    editor.parentWindow.activateWindow()
-    if new.isValid():
-        editor.bcolour = new.name()
-        onBgColourChanged(editor)
-        _wrapWithBgColour(editor, editor.bcolour)
-
-
-def _updateBackgroundButton(editor):
-    editor.web.eval(
-        """$("#backcolor")[0].style.backgroundColor = '%s'""" % editor.bcolour
-    )
-
-
-def onBgColourChanged(editor):
-    _updateBackgroundButton(editor)
-    editor.mw.pm.profile["lastBgColor"] = editor.bcolour
-
-
-def _wrapWithBgColour(editor, color):
-    """
-    Wrap the selected text in an appropriate tag with a background color.
-    """
-    # On Linux, the standard 'hiliteColor' method works. On Windows and OSX
-    # the formatting seems to get filtered out
-
-    editor.web.eval("""
-        if (!setFormat('hiliteColor', '%s')) {
-            setFormat('backcolor', '%s');
-        }
-        """ % (color, color))
-
-    if isWin or isMac:
-        # remove all Apple style classes, which is needed for
-        # text highlighting on platforms other than Linux
-        editor.web.eval("""
-            var matches = document.querySelectorAll(".Apple-style-span");
-            for (var i = 0; i < matches.length; i++) {
-                matches[i].removeAttribute("class");
-            }
-        """)
+get_config = config_getter_factory(mw.addonManager, __name__)
 
 
 # UI element creation
 
 
-def createCustomButton(editor, name, tooltip, hotkey, method):
+def create_custom_button(editor, name, tooltip, hotkey, method):
     if name == "onBackground":
         editor._links[name] = method
-        QShortcut(
-            QKeySequence(hotkey), editor.widget, activated=lambda s=editor: method(s)
-        )
+        shortcut = QShortcut(QKeySequence(hotkey), editor.widget)
+        shortcut.activated.connect(lambda editor=editor: method(editor))
         return """<button tabindex=-1 class=linkb title="{}"
                     type="button" onclick="pycmd('{}');return false;">
                     <div id=backcolor style="display:inline-block; background: #000;border-radius: 5px;"
@@ -196,17 +74,16 @@ def createCustomButton(editor, name, tooltip, hotkey, method):
 # Hooks
 
 
-def onLoadNote(editor):
-    setupBackgroundButton(editor)
-
-
-def onSetupButtons(buttons, editor):
+def on_setup_buttons(buttons: List[str], editor: "Editor"):
     """Add buttons to Editor for Anki 2.1.x"""
 
-    actions = getConfig().get("actions", None)
+    if editor.web is None:
+        return
+
+    actions = get_config().get("actions", None)
 
     if not actions:
-        return buttons
+        return
 
     for action in actions:
         try:
@@ -214,31 +91,40 @@ def onSetupButtons(buttons, editor):
             tooltip = action["tooltip"]
             label = action.get("label", "")
             hotkey = action["hotkey"]
-            method = globals().get(name)
         except KeyError:
-            print("Simple Format Pack: Action not configured properly:", action)
+            print("Mini Format Pack: Action not configured properly:", action)
             continue
+
+        formatter = FORMATTERS.get(name)
+
+        if formatter is None or not callable(formatter):
+            print("Mini Format Pack: Method not found:", name)
+            continue
+
+        def wrapper(editor=editor, formatter=formatter):
+            if editor.web is None:
+                print("Mini Format Pack: Editor webview not properly initialized")
+                return
+            formatter(editor, editor.web)
 
         icon_path = os.path.join(addon_path, "icons", "{}.png".format(name))
         if not os.path.exists(icon_path):
             icon_path = ""
 
         if action.get("custom", False):
-            b = createCustomButton(editor, name, tooltip, hotkey, method)
+            button = create_custom_button(editor, name, tooltip, hotkey, wrapper)
         else:
-            b = editor.addButton(
+            button = editor.addButton(
                 icon_path,
                 name,
-                method,
+                wrapper,
                 tip="{} ({})".format(tooltip, hotkey),
                 label="" if icon_path else label,
                 keys=hotkey,
             )
 
-        buttons.append(b)
-
-    return buttons
+        buttons.append(button)
 
 
-addHook("loadNote", onLoadNote)
-addHook("setupEditorButtons", onSetupButtons)
+editor_did_load_note.append(update_background_color_ui)
+editor_did_init_buttons.append(on_setup_buttons)

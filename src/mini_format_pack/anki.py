@@ -30,3 +30,35 @@
 #
 # Any modifications to this file must keep this entire header intact.
 
+
+from typing import TYPE_CHECKING, Dict, Any, Optional
+
+
+if TYPE_CHECKING:
+    from aqt.addons import AddonManager
+    from aqt.main import AnkiQt
+
+IMPORT_ERRORS = (ImportError, ModuleNotFoundError)
+
+__all__ = ["is_mac", "is_win"]
+
+try:
+    from anki.utils import is_mac, is_win
+except IMPORT_ERRORS:
+    from anki.utils import isMac as is_mac  # type: ignore[attr-defined, no-redef]
+    from anki.utils import isWin as is_win  # type: ignore[attr-defined, no-redef]
+
+
+def config_getter_factory(addon_manager: "AddonManager", package_name: str):
+    """Factory function for getting add-on config"""
+
+    def get_config() -> Dict[str, Any]:
+        """Get add-on config"""
+        return addon_manager.getConfig(package_name) or {}
+
+    return get_config
+
+
+def get_anki_profile(main_window: "AnkiQt") -> Dict[str, Any]:
+    """Get Anki profile name"""
+    return main_window.pm.profile or {}
