@@ -36,7 +36,7 @@ The easiest way to install Mini Format Pack is through [AnkiWeb](https://ankiweb
 
 #### Manual installation <!-- omit in toc -->
 
-1. Make sure you have the [latest version](https://apps.ankiweb.net/#download) of Anki 2.1 installed. Earlier releases (e.g. found in various Linux distros) do not support `.ankiaddon` packages.
+1. Make sure you have the [latest version](https://apps.ankiweb.net/#download) of Anki installed.
 2. Download the latest `.ankiaddon` package from the [releases tab](https://github.com/glutanimate/mini-format-pack/releases) (you might need to click on *Assets* below the description to reveal the download links)
 3. From Anki's main window, head to *Tools* → *Add-ons*
 4. Drag-and-drop the `.ankiaddon` package onto the add-ons list
@@ -72,7 +72,7 @@ Contributions are welcome! Please review the [contribution guidelines](./CONTRIB
 
 *Copyright(c) 2017-2018 [Damien Elmes](http://ichi2.net/contact.html)*
 
-*Copyright © 2018-2019 [Aristotelis P.](https://glutanimate.com/) (Glutanimate)*
+*Copyright © 2018-2023 [Aristotelis P.](https://glutanimate.com/) (Glutanimate)*
 
 *Mini Format pack* is based on [*Power Format Pack*](https://github.com/Neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://github.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
 

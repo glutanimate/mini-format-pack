@@ -4,7 +4,7 @@ This is a quick stripped-down version of Stefan van den Akker's [Power Format Pa
 
 ![](https://raw.githubusercontent.com/glutanimate/mini-format-pack/master/screenshots/main.png)
 
-### FEATURES
+### Features
 
 - Highlight text
 - Insert code block
@@ -17,7 +17,7 @@ This is a quick stripped-down version of Stefan van den Akker's [Power Format Pa
 
 <!-- CHANGELOG -->
 
-### CONFIGURATION
+### Configuration
 
 The add-on offers some limited configuration capabilities, but they are not as fleshed out nor as user-friendly as PFP. You will have to use Anki 2.1's built-in config manager to update the config dictionary (Tools → Add-ons → Select Mini Format Pack → Click configure). 
 
@@ -29,7 +29,7 @@ The properties  you can modify include:
 
 Your changes will be applied once you restart your editor window (if running). Please do not change the '`name`' property, as this is used to assign the corresponding button to the function it calls.
 
-### RELATED ADD-ONS
+### Related Add-ons
 
 If you're looking for even more powerful formatting features in Anki 2.1, make sure to also check out some of the following add-ons:
 
@@ -39,11 +39,11 @@ If you're looking for even more powerful formatting features in Anki 2.1, make s
 
 <!-- SUPPORT -->
 
-### CREDITS AND LICENSE
+### Credits and License
 
 *Copyright(c) 2014-2018 [Stefan van den Akker](https://relentlesscoding.com/)*
 *Copyright(c) 2017-2018 [Damien Elmes](http://ichi2.net/contact.html)*
-*Copyright © 2018-2019 [Aristotelis P.](https://glutanimate.com/)  (Glutanimate)*
+*Copyright © 2018-2023 [Aristotelis P.](https://glutanimate.com/)  (Glutanimate)*
 
 *Mini Format pack* is based on [*Power Format Pack*](https://github.com/Neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://github.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
 
