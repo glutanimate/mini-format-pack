@@ -36,11 +36,10 @@ import os
 from typing import TYPE_CHECKING, List
 
 from aqt import mw
-from aqt.gui_hooks import editor_did_init_buttons, editor_did_load_note
+from aqt.gui_hooks import editor_did_init_buttons
 from aqt.qt import QKeySequence, QShortcut
 
 from .anki import config_getter_factory
-from .background import update_background_color_ui
 from .consts import addon_path
 from .formatters import FORMATTERS
 
@@ -126,5 +125,4 @@ def on_setup_buttons(buttons: List[str], editor: "Editor"):
         buttons.append(button)
 
 
-editor_did_load_note.append(update_background_color_ui)
 editor_did_init_buttons.append(on_setup_buttons)
