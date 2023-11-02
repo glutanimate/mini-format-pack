@@ -20,6 +20,7 @@ If you enjoy Mini Format Pack, please consider supporting my work on Patreon, or
 ### Changes
 
 - Rewrote large parts of the codebase for better compatibility with future Anki releases
+- Removed support for changing text background color. This has been built into Anki for a while now and nowadays works better than the add-on variant of the feature.
 
 ## [0.1.1] - 2018-07-24
 
