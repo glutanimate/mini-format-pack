@@ -12,8 +12,15 @@ If you enjoy Mini Format Pack, please consider supporting my work on Patreon, or
 
 ## [Unreleased]
 
+### Added
+
+- Added support for Anki 23.10+
 - Added button for inline `code` formatting (thanks to Rai and lukkea for their contributions and to Juddd for the feature request!)
     
+### Changes
+
+- Rewrote large parts of the codebase for better compatibility with future Anki releases
+
 ## [0.1.1] - 2018-07-24
 
 ### Fixed
