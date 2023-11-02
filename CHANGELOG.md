@@ -12,6 +12,10 @@ If you enjoy Mini Format Pack, please consider supporting my work on Patreon, or
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-11-02
+
+### [Download](https://github.com/glutanimate/mini-format-pack/releases/tag/v1.0.0)
+
 ### Added
 
 - Added support for Anki 23.10+
