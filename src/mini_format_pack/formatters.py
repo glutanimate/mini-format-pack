@@ -43,9 +43,6 @@ from aqt.utils import getOnlyText
 if TYPE_CHECKING:
     from aqt.editor import EditorWebView, Editor
 
-from .background import highlight_with_existing_color, pick_color_and_highlight
-
-
 class Formatter(Protocol):
     """
     Protocol for format functions.
@@ -136,13 +133,3 @@ def justifyRight(editor: "Editor", editor_webview: "EditorWebView"):
 @register_formatter
 def justifyFull(editor: "Editor", editor_webview: "EditorWebView"):
     editor_webview.eval("setFormat('justifyFull');")
-
-
-@register_formatter
-def onBackground(editor: "Editor", editor_webview: "EditorWebView"):
-    highlight_with_existing_color(editor, editor_webview)
-
-
-@register_formatter
-def onChangeBgCol(editor: "Editor", editor_webview: "EditorWebView"):
-    pick_color_and_highlight(editor)
