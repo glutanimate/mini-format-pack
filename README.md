@@ -74,7 +74,7 @@ Contributions are welcome! Please review the [contribution guidelines](./CONTRIB
 
 *Copyright © 2018-2023 [Aristotelis P.](https://glutanimate.com/) (Glutanimate)*
 
-*Mini Format pack* is based on [*Power Format Pack*](https://github.com/Neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://github.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
+*Mini Format pack* is based on [*Power Format Pack*](https://gitlab.com/neftas/supplementary-buttons-anki) by [Stefan van den Akker](https://gitlab.com/Neftas). All credit for the original idea and implementation goes to him. I would like to express my heartfelt gratitude for all of what he has done for the Anki community over the years. PFP was one of the projects that originally inspired me to go into add-on development. Thank you for that, Stefan!
 
 Mini Format Pack is free and open-source software. The add-on code that runs within Anki is released under the GNU AGPLv3 license, extended by a number of additional terms. For more information please see the [LICENSE](https://github.com/glutanimate/mini-format-pack/blob/master/LICENSE) file that accompanied this program.
 
